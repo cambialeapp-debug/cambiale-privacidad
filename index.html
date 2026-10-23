@@ -4,8 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0a10">
-  <meta name="description" content="Conoce cómo Cámbiale protege y utiliza tu información personal.">
-  <title>Privacidad | Cámbiale</title>
+  <meta name="description" content="Política de privacidad y términos de uso de Cámbiale: cómo se protege tu información, qué fuentes consulta la app y qué significa usar la aplicación.">
+  <title>Privacidad y términos | Cámbiale</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: dark;
@@ -18,7 +22,8 @@
       --pink: #e83e91;
       --pink-soft: #f08cb7;
       --teal: #20bfa9;
-      --purple: #a88af2;
+      --purple: #8b6ae8;
+      --warning: #ffb454;
       --content: 1080px;
     }
 
@@ -31,7 +36,7 @@
         radial-gradient(ellipse at 50% -18%, rgb(232 62 145 / 15%), transparent 44rem),
         var(--bg);
       color: var(--text);
-      font: 16px/1.7 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font: 16px/1.7 Montserrat, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -73,9 +78,12 @@
       text-decoration: none;
     }
     .brand-mark {
+      position: relative;
       display: grid;
+      overflow: hidden;
       width: 38px;
       height: 38px;
+      flex: 0 0 38px;
       place-items: center;
       border: 1px solid rgb(255 255 255 / 16%);
       border-radius: 13px;
@@ -85,6 +93,14 @@
       font-size: 18px;
       font-weight: 850;
     }
+    .brand-mark img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .brand-mark .brand-fallback { position: relative; }
     .top-link {
       color: var(--muted);
       font-size: 14px;
@@ -117,6 +133,17 @@
       content: "";
       pointer-events: none;
     }
+    .hero-logo {
+      position: absolute;
+      top: clamp(24px, 5vw, 46px);
+      right: clamp(24px, 5vw, 54px);
+      width: clamp(74px, 12vw, 116px);
+      height: clamp(74px, 12vw, 116px);
+      border: 1px solid rgb(255 255 255 / 14%);
+      border-radius: 27%;
+      object-fit: cover;
+      box-shadow: 0 22px 55px rgb(0 0 0 / 45%), 0 0 0 9px rgb(232 62 145 / 6%);
+    }
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -143,6 +170,7 @@
       font-weight: 780;
       letter-spacing: -.065em;
       line-height: 1.04;
+      text-wrap: balance;
     }
     h1 span {
       background: linear-gradient(90deg, #f08cb7 5%, var(--pink) 58%, #b993f8);
@@ -150,27 +178,34 @@
       -webkit-text-fill-color: transparent;
     }
     .hero-copy {
-      max-width: 640px;
+      max-width: 620px;
       margin: 22px 0 0;
       color: #c9bfce;
       font-size: clamp(16px, 2vw, 18px);
     }
-    .updated {
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 27px;
+    }
+    .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 27px;
       padding: 8px 12px;
       border: 1px solid rgb(255 255 255 / 9%);
       border-radius: 999px;
       background: rgb(255 255 255 / 4%);
       color: var(--muted);
       font-size: 13px;
+      font-weight: 500;
     }
+    .badge b { color: #d8cedc; font-weight: 650; }
 
     .summary-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
       margin: 0 0 64px;
     }
@@ -195,6 +230,7 @@
     }
     .summary-card:nth-child(2) .summary-icon { background: rgb(32 191 169 / 12%); color: #58d9c4; }
     .summary-card:nth-child(3) .summary-icon { background: rgb(139 106 232 / 15%); color: #b9a2ff; }
+    .summary-card:nth-child(4) .summary-icon { background: rgb(255 180 84 / 12%); color: var(--warning); }
     .summary-card strong { display: block; font-size: 15px; }
     .summary-card p { margin: 5px 0 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
 
@@ -249,6 +285,7 @@
       font-weight: 730;
       letter-spacing: -.035em;
       line-height: 1.3;
+      text-wrap: balance;
     }
     .section-number {
       display: grid;
@@ -267,6 +304,29 @@
     .policy p { margin: 0 0 13px; color: #c9c1ce; }
     .policy p:last-child { margin-bottom: 0; }
     .policy strong { color: var(--text); font-weight: 650; }
+    .policy ul {
+      margin: 0 0 13px;
+      padding: 0;
+      list-style: none;
+    }
+    .policy ul li {
+      position: relative;
+      margin: 0 0 9px;
+      padding-left: 24px;
+      color: #c9c1ce;
+    }
+    .policy ul li:last-child { margin-bottom: 0; }
+    .policy ul li::before {
+      position: absolute;
+      top: .62em;
+      left: 4px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 10px rgb(32 191 169 / 45%);
+      content: "";
+    }
     .note {
       margin-top: 17px;
       padding: 15px 17px;
@@ -274,6 +334,15 @@
       border-radius: 0 12px 12px 0;
       background: rgb(32 191 169 / 7%);
       color: #c4d8d3;
+      font-size: 14px;
+    }
+    .note-warn {
+      margin-top: 17px;
+      padding: 15px 17px;
+      border-left: 3px solid var(--warning);
+      border-radius: 0 12px 12px 0;
+      background: rgb(255 180 84 / 7%);
+      color: #e6d3b4;
       font-size: 14px;
     }
     .contact-card {
@@ -311,12 +380,29 @@
       color: #92899a;
       font-size: 12px;
     }
-    .footer-brand { color: #d8cedc; font-weight: 700; }
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #d8cedc;
+      font-weight: 700;
+    }
+    .footer-logo {
+      width: 22px;
+      height: 22px;
+      border: 1px solid rgb(255 255 255 / 12%);
+      border-radius: 7px;
+      object-fit: cover;
+    }
 
+    @media (max-width: 960px) {
+      .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
     @media (max-width: 760px) {
       .topbar-inner, main, .footer-inner { width: min(100% - 32px, var(--content)); }
       .hero { margin-top: 28px; border-radius: 22px; }
-      .summary-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 42px; }
+      .hero-logo { display: none; }
+      .summary-grid { gap: 10px; margin-bottom: 42px; }
       .summary-card { display: grid; min-height: 0; grid-template-columns: 38px 1fr; column-gap: 13px; padding: 15px; }
       .summary-icon { grid-row: span 2; margin: 0; }
       .summary-card p { margin-top: 2px; }
@@ -328,11 +414,13 @@
       .topbar-inner, main, .footer-inner { width: calc(100% - 28px); }
       .topbar-inner { min-height: 66px; }
       .brand { font-size: 16px; }
-      .brand-mark { width: 34px; height: 34px; border-radius: 11px; }
+      .brand-mark { width: 34px; height: 34px; flex-basis: 34px; border-radius: 11px; }
       .top-link { font-size: 12px; }
       .hero { margin: 20px 0 16px; padding: 27px 22px; }
       .hero-copy { margin-top: 16px; }
-      .updated { margin-top: 20px; font-size: 12px; }
+      .hero-badges { margin-top: 20px; }
+      .badge { font-size: 12px; }
+      .summary-grid { grid-template-columns: 1fr; }
       .toc-links { grid-template-columns: 1fr; }
       .contact-card { align-items: flex-start; flex-direction: column; }
       .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 20px; }
@@ -347,7 +435,10 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#" aria-label="Cámbiale, inicio de esta página">
-        <span class="brand-mark" aria-hidden="true">C</span>
+        <span class="brand-mark" aria-hidden="true">
+          <img src="logo.png" alt="" onerror="this.remove()">
+          <span class="brand-fallback">C</span>
+        </span>
         <span>Cámbiale</span>
       </a>
       <a class="top-link" href="mailto:cambialeapp@gmail.com">Contacto <span aria-hidden="true">↗</span></a>
@@ -356,30 +447,40 @@
 
   <main>
     <section class="hero" aria-labelledby="page-title">
+      <img class="hero-logo" src="logo.png" alt="" onerror="this.remove()">
       <p class="eyebrow">Transparencia y confianza</p>
       <h1 id="page-title">Tu privacidad,<br><span>en claro.</span></h1>
       <p class="hero-copy">
         Queremos que tengas el control. Aquí te contamos qué información usa
-        Cámbiale, dónde se guarda y qué ocurre cuando decides compartirla.
+        Cámbiale, dónde se guarda, qué fuentes consulta y qué significa usar la aplicación.
       </p>
-      <p class="updated"><span aria-hidden="true">◷</span> Última actualización: 14 de octubre de 2026</p>
+      <p class="hero-badges">
+        <span class="badge"><span aria-hidden="true">◷</span> <b>Última actualización:</b> 23 de octubre de 2026</span>
+        <span class="badge"><span aria-hidden="true">🔒</span> Datos en tu dispositivo</span>
+        <span class="badge"><span aria-hidden="true">⌁</span> Sin cuentas ni publicidad</span>
+      </p>
     </section>
 
     <section class="summary-grid" aria-label="Resumen de privacidad">
       <article class="summary-card">
         <span class="summary-icon" aria-hidden="true">⌂</span>
         <strong>Tus datos, en tu dispositivo</strong>
-        <p>Preferencias, metas e historial se guardan localmente.</p>
+        <p>Preferencias, metas e historial se guardan localmente; los perfiles de pago, cifrados.</p>
       </article>
       <article class="summary-card">
         <span class="summary-icon" aria-hidden="true">↗</span>
-        <strong>Tasas desde servicios externos</strong>
-        <p>La app consulta proveedores para mostrar información actualizada.</p>
+        <strong>Tasas desde fuentes públicas</strong>
+        <p>La app consulta al BCV y servicios externos, con respaldo automático entre ellos.</p>
       </article>
       <article class="summary-card">
         <span class="summary-icon" aria-hidden="true">◇</span>
         <strong>Tú decides qué compartir</strong>
-        <p>Un perfil de pago solo se comparte si lo eliges.</p>
+        <p>Un perfil de pago solo se comparte si lo eliges y mediante tu propio dispositivo.</p>
+      </article>
+      <article class="summary-card">
+        <span class="summary-icon" aria-hidden="true">⊘</span>
+        <strong>Sin cuentas ni publicidad</strong>
+        <p>Sin registro, sin anuncios y sin rastreadores de terceros dentro de la app.</p>
       </article>
     </section>
 
@@ -396,6 +497,7 @@
           <a href="#seguridad">Seguridad</a>
           <a href="#menores">Menores</a>
           <a href="#cambios">Cambios</a>
+          <a href="#legal">Términos y responsabilidad</a>
           <a href="#contacto">Contacto</a>
         </div>
       </nav>
@@ -404,26 +506,38 @@
         <section class="policy-section" id="local">
           <h2 class="section-heading"><span class="section-number">01</span>Información que se guarda en tu dispositivo</h2>
           <p>
-            Cámbiale guarda localmente información necesaria para sus funciones,
+            Cámbiale guarda localmente la información necesaria para sus funciones,
             como preferencias, tasas e historial consultados, alertas y metas de
             ahorro. Las metas pueden incluir un nombre, montos y abonos que tú registres.
           </p>
           <p>
             Si creas perfiles de pago, puedes guardar datos como titular, banco,
             número de cuenta o teléfono, correo o usuario de pago, documento de
-            identidad y notas. Estos perfiles se almacenan en el almacenamiento
-            seguro del dispositivo. Otros datos y preferencias se guardan en el
-            almacenamiento local de la app.
+            identidad y notas. <strong>Estos perfiles de pago se almacenan de forma local
+            y cifrada</strong> en el almacenamiento seguro provisto por el sistema operativo
+            de tu dispositivo (KeyStore de Android y Keychain de iOS), utilizando
+            mecanismos de aislamiento que impiden que terceros o el equipo de Cámbiale
+            tengamos acceso a ellos. <strong>La aplicación no transmite ni comparte estos
+            datos con ningún servidor externo.</strong> Los demás datos y preferencias se
+            guardan en el almacenamiento local de la app.
           </p>
         </section>
 
         <section class="policy-section" id="servicios">
           <h2 class="section-heading"><span class="section-number">02</span>Consultas de tasas y servicios externos</h2>
           <p>
-            Para mostrar tasas, la app realiza solicitudes a servicios externos,
-            incluidos Open ER API, ve.dolarapi.com y Binance P2P. Las consultas
-            solicitan información de tasas; la app no envía a esos servicios tus
-            perfiles de pago ni los datos de tus metas de ahorro.
+            Para mostrar tasas, la app realiza solicitudes a fuentes externas de
+            acceso público: la portada del <strong>Banco Central de Venezuela</strong>
+            (bcv.org.ve), <strong>Open ER API</strong>, <strong>ve.dolarapi.com</strong> y la plataforma
+            de activos digitales <strong>Binance P2P</strong>. Las consultas solicitan únicamente
+            información de tasas; la app no envía a esos servicios tus perfiles de
+            pago ni los datos de tus metas de ahorro.
+          </p>
+          <p>
+            <strong>ve.dolarapi.com y Open ER API funcionan como fuentes de respaldo:</strong>
+            si la portada del BCV no responde o tarda, la app recurre a ellas para
+            seguir mostrando la misma referencia oficial vigente. Cada tarjeta indica
+            la fuente y la fecha del dato que estás consultando.
           </p>
           <p>
             Como parte de una conexión a Internet, esos servicios pueden recibir
@@ -431,6 +545,12 @@
             en sus sistemas. El tratamiento de esa información también se rige por
             las políticas y prácticas de los respectivos proveedores.
           </p>
+          <div class="note">
+            El usuario acepta que la disponibilidad y la precisión de los datos
+            mostrados dependen de dichos proveedores externos. Cámbiale no se hace
+            responsable por interrupciones del servicio, retrasos en la actualización
+            o inexactitudes en la información provista por terceros.
+          </div>
         </section>
 
         <section class="policy-section" id="compartir">
@@ -442,6 +562,11 @@
             de destino que selecciones. Desde ese momento, el tratamiento depende
             de esa aplicación y de sus políticas.
           </p>
+          <div class="note">
+            Cámbiale no envía tus perfiles de pago a ningún servidor propio ni de
+            terceros: el único envío ocurre cuando tú, de forma voluntaria, compartes
+            un texto desde tu dispositivo.
+          </div>
         </section>
 
         <section class="policy-section" id="notificaciones">
@@ -458,9 +583,10 @@
         <section class="policy-section" id="analitica">
           <h2 class="section-heading"><span class="section-number">05</span>Analítica y publicidad</h2>
           <p>
-            En la versión de la app revisada para esta política no encontramos
-            servicios integrados de publicidad o analítica de terceros. Si esto
-            cambia, esta política se actualizará para describirlo.
+            En la versión de la app revisada para esta política no se encuentran
+            servicios integrados de publicidad, analítica ni rastreo de terceros:
+            no hay registro de usuarios, cuentas ni perfiles en línea. Si esto
+            cambia en el futuro, esta política se actualizará antes para describirlo.
           </p>
         </section>
 
@@ -478,10 +604,16 @@
         <section class="policy-section" id="seguridad">
           <h2 class="section-heading"><span class="section-number">07</span>Seguridad</h2>
           <p>
-            La app usa el almacenamiento seguro del dispositivo para los perfiles
-            de pago. Ningún método de almacenamiento o transmisión electrónica
-            puede garantizar seguridad absoluta; te recomendamos proteger tu
-            dispositivo y mantener actualizado su sistema operativo.
+            Los perfiles de pago se guardan cifrados en el dispositivo mediante las
+            herramientas seguras del propio sistema operativo (KeyStore de Android y
+            Keychain de iOS), fuera del alcance de otras aplicaciones. La información
+            restante permanece en el almacenamiento local de la app, sin copias en
+            servidores.
+          </p>
+          <p>
+            Ningún método de almacenamiento o transmisión electrónica puede
+            garantizar seguridad absoluta; te recomendamos proteger tu dispositivo
+            con bloqueo de pantalla y mantener actualizado su sistema operativo.
           </p>
         </section>
 
@@ -503,12 +635,59 @@
           </p>
         </section>
 
+        <section class="policy-section" id="legal">
+          <h2 class="section-heading"><span class="section-number">10</span>Exención de responsabilidad e información legal</h2>
+          <p>
+            <strong>Naturaleza del servicio.</strong> «Cámbiale» es una herramienta
+            tecnológica de uso personal que funciona estrictamente como una
+            <strong>calculadora matemática y un visor estadístico de datos públicos de libre
+            consulta</strong>. La aplicación no realiza intermediación financiera, no capta
+            fondos del público, no procesa pagos, no ejecuta operaciones de cambio de
+            divisas, no realiza conversión material de divisas ni opera como casa de
+            cambio, casa de bolsa, billetera digital o plataforma de negociación.
+          </p>
+          <ul>
+            <li>La app no compra, no vende, no guarda y no transfiere divisas ni activos de ningún tipo.</li>
+            <li>La app no ejecuta transacciones entre personas: toda operación que decidas realizar se celebra directamente entre tú y el tercero, al margen de la aplicación, y es de tu exclusiva responsabilidad.</li>
+            <li>La app no solicita registro, no capta inversiones y no ofrece productos financieros.</li>
+          </ul>
+          <p>
+            <strong>Origen de los datos.</strong> Los indicadores estadísticos mostrados
+            provienen exclusivamente de fuentes externas accesibles al público general
+            (como el Banco Central de Venezuela y plataformas externas de consulta
+            pública de tasas). «Cámbiale» no fija, determina, altera ni influye en el
+            valor de ninguna tasa o indicador: únicamente los presenta y permite
+            realizar cálculos matemáticos sobre ellos.
+          </p>
+          <p>
+            <strong>Uso de la información.</strong> Toda la información mostrada y los
+            cálculos generados por el usuario se presentan con fines puramente
+            informativos, educativos y de consulta referencial. Ningún dato provisto
+            por la aplicación constituye una oferta de compra o venta de divisas, una
+            garantía de valor, ni asesoría o recomendación financiera, legal, tributaria
+            o de inversión de ningún tipo. El usuario es el único responsable del uso
+            que le dé a los cálculos matemáticos obtenidos.
+          </p>
+          <p>
+            <strong>Cumplimiento normativo.</strong> El usuario se obliga a utilizar la
+            aplicación y la información que obtiene de ella de conformidad con la
+            legislación vigente de la República Bolivariana de Venezuela y con las
+            obligaciones que le correspondan personalmente. El uso de la aplicación
+            implica el conocimiento y la aceptación de estos términos.
+          </p>
+          <div class="note-warn">
+            <strong>Recuerda:</strong> Cámbiale es una calculadora y un visor de datos
+            públicos. No compra, no vende, no guarda, no transfiere divisas y no
+            participa de ninguna manera en operaciones que decidas realizar con terceros.
+          </div>
+        </section>
+
         <section class="policy-section" id="contacto">
-          <h2 class="section-heading"><span class="section-number">10</span>¿Tienes alguna pregunta?</h2>
+          <h2 class="section-heading"><span class="section-number">11</span>¿Tienes alguna pregunta?</h2>
           <div class="contact-card">
             <div>
               <strong>Estamos para ayudarte.</strong>
-              <p>Escríbenos si tienes preguntas sobre privacidad o esta política.</p>
+              <p>Escríbenos si tienes preguntas sobre privacidad, esta política o el uso de la app.</p>
             </div>
             <a class="contact-button" href="mailto:cambialeapp@gmail.com">Enviar un correo <span aria-hidden="true">↗</span></a>
           </div>
@@ -519,7 +698,10 @@
 
   <footer>
     <div class="footer-inner">
-      <span class="footer-brand">Cámbiale <span aria-hidden="true">·</span> Privacidad</span>
+      <span class="footer-brand">
+        <img class="footer-logo" src="logo.png" alt="" onerror="this.remove()">
+        Cámbiale <span aria-hidden="true">·</span> Privacidad y términos
+      </span>
       <span>Hecho para darte claridad y control.</span>
     </div>
   </footer>
